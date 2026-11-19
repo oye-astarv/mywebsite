@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV &mdash; Mohammad Ateeb Shah</title>
+    <meta name="description"
+        content="CV of Mohammad Ateeb Shah &mdash; Computer Science & Artificial Intelligence student focused on robotics, embedded AI, and intelligent systems." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #030816;
+            --bg-card: rgba(4, 12, 28, 0.7);
+            --border: #3b527a;
+            --accent: #e2a969;
+            --accent-dim: rgba(226, 169, 105, 0.15);
+            --accent-glow: rgba(226, 169, 105, 0.4);
+            --text: #e3d5c1;
+            --text-dim: #9baac7;
+            --font-mono: 'Space Mono', monospace;
+            --font-retro: 'VT323', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-mono);
+            -webkit-font-smoothing: antialiased;
+            background-image:
+                linear-gradient(rgba(59, 82, 122, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 82, 122, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            padding: 40px 20px 80px;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .sheet {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid var(--border);
+            background: rgba(4, 12, 28, 0.85);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .sheet-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: var(--border);
+            color: var(--bg);
+            padding: 8px 16px;
+            font-family: var(--font-retro);
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .sheet-bar a,
+        .sheet-bar button {
+            font-family: var(--font-retro);
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid rgba(3, 8, 22, 0.55);
+            color: var(--bg);
+            padding: 2px 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .sheet-bar a:hover,
+        .sheet-bar button:hover {
+            background: var(--bg);
+            color: var(--accent);
+        }
+
+        .sheet-body {
+            padding: 40px;
+        }
+
+        header.cv-head {
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-family: var(--font-retro);
+            font-size: 44px;
+            line-height: 1.1;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-shadow: 0 0 6px var(--accent-glow);
+        }
+
+        .cv-role {
+            font-size: 14px;
+            color: var(--text);
+            margin-top: 8px;
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .cv-contact a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--border);
+            transition: 0.2s;
+        }
+
+        .cv-contact a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-family: var(--font-retro);
+            font-size: 24px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        h2::before {
+            content: '>';
+            margin-right: 8px;
+            color: var(--border);
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        p + p {
+            margin-top: 12px;
+        }
+
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .entry-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .entry-meta {
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .entry-sub {
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 4px;
+        }
+
+        li::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+            margin-top: 12px;
+        }
+
+        .modules h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .modules ul {
+            margin-top: 0;
+        }
+
+        .modules li {
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 8px 24px;
+            font-size: 13px;
+        }
+
+        .skills dt {
+            color: var(--accent);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 3px;
+        }
+
+        .skills dd {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .repo {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: var(--font-retro);
+            font-size: 17px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            padding: 4px 12px;
+            transition: 0.2s;
+        }
+
+        .repo:hover {
+            background: var(--accent);
+            color: var(--bg);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .note {
+            margin-top: 8px;
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        footer.cv-foot {
+            border-top: 1px dashed var(--border);
+            padding-top: 20px;
+            font-family: var(--font-retro);
+            font-size: 17px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media(max-width:700px) {
+            body {
+                padding: 16px 10px 48px;
+            }
+
+            .sheet-body {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .modules {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .skills dd {
+                margin-bottom: 10px;
+            }
+
+            .entry-meta {
+                white-space: normal;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0;
+                font-size: 10pt;
+            }
+
+            .sheet {
+                border: none;
+                box-shadow: none;
+                background: #fff;
+                max-width: none;
+            }
+
+            .sheet-bar {
+                display: none;
+            }
+
+            .sheet-body {
+                padding: 0;
+            }
+
+            header.cv-head {
+                padding-bottom: 12px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h1 {
+                font-size: 24pt;
+                color: #111;
+                text-shadow: none;
+                letter-spacing: 1px;
+            }
+
+            .cv-role {
+                font-size: 10pt;
+                color: #222;
+                margin-top: 4px;
+            }
+
+            .cv-contact {
+                margin-top: 8px;
+                font-size: 8.5pt;
+            }
+
+            .cv-contact,
+            .cv-contact a {
+                color: #222;
+            }
+
+            section {
+                margin-bottom: 14px;
+            }
+
+            h2 {
+                font-size: 13pt;
+                color: #111;
+                text-shadow: none;
+                margin-bottom: 6px;
+                letter-spacing: 1px;
+            }
+
+            p,
+            li {
+                font-size: 9.5pt;
+                line-height: 1.45;
+                color: #222;
+            }
+
+            ul {
+                margin-top: 4px;
+            }
+
+            li {
+                margin-bottom: 1px;
+                padding-left: 14px;
+            }
+
+            li::before {
+                color: #111;
+            }
+
+            .entry {
+                margin-bottom: 10px;
+            }
+
+            .entry-title {
+                font-size: 10pt;
+                color: #111;
+            }
+
+            .entry-meta {
+                font-size: 8pt;
+                color: #111;
+            }
+
+            .entry-sub {
+                font-size: 9pt;
+                color: #222;
+                margin-top: 2px;
+            }
+
+            .modules {
+                gap: 8px 24px;
+                margin-top: 6px;
+            }
+
+            .modules h4 {
+                color: #111;
+                font-size: 8.5pt;
+                margin-bottom: 2px;
+            }
+
+            .modules li {
+                font-size: 9pt;
+            }
+
+            .skills {
+                gap: 3px 18px;
+                font-size: 9.5pt;
+            }
+
+            .skills dt {
+                color: #111;
+                padding-top: 1px;
+            }
+
+            .skills dd {
+                color: #222;
+            }
+
+            .repo {
+                margin-top: 5px;
+                padding: 2px 8px;
+                font-size: 9pt;
+                color: #111;
+                border-color: #111;
+            }
+
+            .note,
+            footer.cv-foot {
+                color: #222;
+            }
+
+            footer.cv-foot {
+                font-size: 10pt;
+                padding-top: 10px;
+                border-top: 1px solid #ccc;
+            }
+
+            .entry,
+            section {
+                break-inside: avoid;
+            }
+
+            @page {
+                margin: 12mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sheet">
+        <div class="sheet-bar">
+            <span>CURRICULUM_VITAE.EXE</span>
+            <span>
+                <a href="index.html">&lt; BACK_TO_SITE</a>
+                <a href="assets/Ateeb_Shah_CV.pdf" download="Ateeb_Shah_CV.pdf">DOWNLOAD_PDF</a>
+            </span>
+        </div>
+
+        <div class="sheet-body">
+            <header class="cv-head">
+                <h1>MOHAMMAD ATEEB SHAH</h1>
+                <p class="cv-role">BSc (Hons) Computer Science &amp; Artificial Intelligence &mdash; University of
+                    Huddersfield</p>
+                <div class="cv-contact">
+                    <a href="tel:+447344290104">+44 7344 290104</a>
+                    <a href="mailto:theateebshah@gmail.com">theateebshah@gmail.com</a>
+                    <a href="mailto:u2578563@unimail.hud.ac.uk">u2578563@unimail.hud.ac.uk</a>
+                    <a href="https://github.com/oye-astarv" target="_blank" rel="noopener noreferrer">github.com/oye-astarv</a>
+                    <a href="https://www.linkedin.com/in/iamamohammadateebshah" target="_blank"
+                        rel="noopener noreferrer">linkedin.com/in/iamamohammadateebshah</a>
+                </div>
+            </header>
+
+            <section>
+                <h2>PROFILE</h2>
+                <p>A motivated and ambitious Computer Science and Artificial Intelligence student with a strong
+                    enthusiasm for learning, problem-solving and embracing new challenges. Demonstrates a genuine
+                    interest in transforming ideas into meaningful solutions and values opportunities to collaborate
+                    with others. Committed to continuous personal and professional development, with a keen interest in
+                    gaining industry experience. Eager to contribute, develop technical and transferable skills, and
+                    make a positive impact within a professional environment while learning from experienced
+                    colleagues.</p>
+            </section>
+
+            <section>
+                <h2>EDUCATION</h2>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">BSc Computer Science &amp; Artificial Intelligence &mdash; University
+                            of Huddersfield</div>
+                        <div class="entry-meta">2025 &ndash; Present</div>
+                    </div>
+                    <p class="entry-sub">Expected First-Class Honours</p>
+                    <div class="modules">
+                        <div>
+                            <h4>Year 1 Modules</h4>
+                            <ul>
+                                <li>Computing and Mathematics A</li>
+                                <li>Object-Oriented Programming (Java) A</li>
+                                <li>Procedural Programming (Python) A</li>
+                                <li>Computer Organisation and Architecture (C) A</li>
+                                <li>Team Project 1 A</li>
+                                <li>Computer Networks A</li>
+                                <li>Object-Oriented Systems Development A</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Year 2 Modules</h4>
+                            <ul>
+                                <li>Introduction to Artificial Intelligence</li>
+                                <li>Relational Databases &amp; Web Integration</li>
+                                <li>Data Structures and Algorithms</li>
+                                <li>Computational Mathematics</li>
+                                <li>Team Project 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">A Levels &mdash; Silicon City Academy of Secondary Education (CBSE,
+                            India)</div>
+                        <div class="entry-meta">2024 &ndash; 2025</div>
+                    </div>
+                    <p class="entry-sub">Mathematics (A) &middot; Physics (A) &middot; Chemistry (A) &middot; Computer
+                        Science (A) &middot; English (A) &mdash; 85% Overall</p>
+                </div>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">GCSE &mdash; Delhi Public School (CBSE, India)</div>
+                        <div class="entry-meta">2022 &ndash; 2023</div>
+                    </div>
+                    <p class="entry-sub">Mathematics (A) &middot; Physics (A) &middot; Chemistry (A) &middot;
+                        Artificial Intelligence (A) &middot; English (A) &mdash; 92% Overall</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>SKILLS</h2>
+                <dl class="skills">
+                    <dt>Programming</dt>
+                    <dd>Python, C++, C, SQL, Java</dd>
+                    <dt>ML / AI</dt>
+                    <dd>Machine Learning, Deep Learning, Transformers, LLMs, CNNs, GNNs, Computer Vision</dd>
+                    <dt>Frameworks</dt>
+                    <dd>PyTorch, TensorFlow, Scikit-learn, NumPy, Pandas, OpenCV, NiLearn</dd>
+                    <dt>LLM Systems</dt>
+                    <dd>LoRA/QLoRA Fine-Tuning, RAG, Model Evaluation, Prompt Engineering</dd>
+                    <dt>Engineering</dt>
+                    <dd>ESP32, Arduino, Sensors, Electronics, Signal Processing, CAD, SolidWorks</dd>
+                    <dt>Robotics</dt>
+                    <dd>ROS 2, Robot Control, Navigation, SLAM, Sensor Fusion, Motion Planning</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>PROJECTS</h2>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">AI Engineering Copilot &mdash; LLM &amp; Transformer System</div>
+                        <div class="entry-meta">2026 &ndash; Present</div>
+                    </div>
+                    <ul>
+                        <li>Built a transformer-based language model from fundamental components including tokenisation,
+                            embeddings, self-attention and transformer blocks.</li>
+                        <li>Fine-tuned an open-source LLM with LoRA/QLoRA and built a RAG pipeline for retrieving
+                            technical documentation and generating context-aware solutions.</li>
+                        <li>Implemented evaluation for response quality, hallucination rate, latency, and performance.
+                        </li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">NeuroVision &mdash; fMRI Motor Intention Decoding</div>
+                        <div class="entry-meta">September 2026</div>
+                    </div>
+                    <ul>
+                        <li>Built a cross-subject decoding pipeline on the OpenNeuro dataset (62 subjects, 12
+                            body-part conditions, 744 fMRI maps) with a subject-grouped 52/10 split to prevent leakage.
+                        </li>
+                        <li>Benchmarked logistic regression, an MLP and a GCN (PyTorch, scikit-learn): logistic
+                            regression reached 85% held-out accuracy (chance 8.3%) vs 75.8% for the MLP; the GCN was
+                            dropped at 17.5%.</li>
+                        <li>Built explainable somatotopy maps and interactive cortical-surface visualizations (nilearn).
+                        </li>
+                    </ul>
+                    <a class="repo" href="https://github.com/oye-astarv/neuro-vision" target="_blank"
+                        rel="noopener noreferrer">[ VIEW_REPO ]</a>
+                </div>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">Vehicle Intelligence Platform &mdash; Automotive Engineering AI</div>
+                        <div class="entry-meta">October 2026</div>
+                    </div>
+                    <ul>
+                        <li>Built a Python-based vehicle simulator with random fault injection across 4 fault types,
+                            varying severity, location and onset, and noisy sensor data across 200 runs.</li>
+                        <li>Developed Random Forest models for fault type, location and severity, alongside an Isolation
+                            Forest anomaly gate and confidence-based abstention, using run-grouped nested validation.
+                        </li>
+                        <li>Achieved 0.74 &plusmn; 0.02 fault-type accuracy (0.79 best), 0.78 location accuracy and 0.16
+                            severity MAE; achieved ~6% anomaly-gate false positives and 90% accuracy at 48% coverage
+                            with abstention.</li>
+                        <li>Benchmarked against a PyTorch CNN (0.36 accuracy); displayed diagnostic reports on a
+                            Streamlit dashboard.</li>
+                    </ul>
+                    <a class="repo" href="https://github.com/oye-astarv/Vehicle-Intelligence-System" target="_blank"
+                        rel="noopener noreferrer">[ VIEW_REPO ]</a>
+                </div>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">Acoustic Bone Health Analyzer</div>
+                        <div class="entry-meta">2026 &ndash; Present</div>
+                    </div>
+                    <ul>
+                        <li>Designing a research-led prototype using accelerometer-based vibration sensing for
+                            non-invasive bone-health assessment.</li>
+                        <li>Applying digital signal processing techniques, FFT, filtering, and feature extraction, to
+                            analyse vibration signals.</li>
+                        <li>Developing a machine-learning pipeline to classify acoustic patterns associated with bone
+                            health.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>ACHIEVEMENTS</h2>
+                <ul>
+                    <li>Designed and built independent robotics, embedded AI and sensor-based engineering projects.
+                    </li>
+                    <li>Developed hardware/software systems integrating microcontrollers, sensors, actuators and ML.
+                    </li>
+                    <li>Applied research papers to design and prototype a novel acoustic bone-analysis system.</li>
+                    <li>Active development of robotics projects using ROS 2 and embedded platforms.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>WORK EXPERIENCE</h2>
+                <div class="entry">
+                    <div class="entry-head">
+                        <div class="entry-title">Warehouse Operative &mdash; EVRI</div>
+                        <div class="entry-meta">December 2026</div>
+                    </div>
+                    <ul>
+                        <li>Worked efficiently in a fast-paced warehouse environment, processing and sorting parcels
+                            accurately to meet daily targets.</li>
+                        <li>Followed health and safety procedures while handling parcels and operating within a
+                            physically demanding environment.</li>
+                        <li>Worked collaboratively with colleagues to maintain an efficient workflow and meet
+                            time-sensitive deadlines.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>ACTIVITIES</h2>
+                <ul>
+                    <li>Member, Islamic Society &mdash; volunteer/participant in community and university events.</li>
+                    <li>Events Co-Ordinator, Jammu &amp; Kashmir Society &mdash; managed cultural and social activities
+                        and events.</li>
+                    <li>Member, Enactus Huddersfield &mdash; contributing towards the Enactus Huddersfield project.</li>
+                    <li>Member, Team Hare &mdash; contributing towards designing and manufacturing a formula-style
+                        racing car.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>INTERESTS</h2>
+                <p>Technology to better people's lives &middot; Robotics &middot; Autonomous Systems &middot; Embedded
+                    AI &middot; Computer Vision &middot; Control Systems &middot; Aerospace &middot; Automotive &middot;
+                    Medical Robotics &middot; Intelligent Machines</p>
+            </section>
+
+            <footer class="cv-foot">References available upon request.</footer>
+        </div>
+    </div>
+</body>
+
+</html>

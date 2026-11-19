@@ -287,6 +287,7 @@
         /* HERO */
         #hero {
             min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
             padding: calc(var(--nav-h) + 40px) 40px 80px;
@@ -553,6 +554,11 @@
         }
 
         /* SLIDER */
+        .slider-titlebar {
+            margin: -40px -40px 40px;
+            border-bottom: 2px solid var(--border);
+        }
+
         .slider-container {
             position: relative;
             border: 2px solid var(--border);
@@ -697,6 +703,208 @@
             #hero {
                 padding-top: 120px;
             }
+
+            nav {
+                padding: 0 24px;
+            }
+
+            section {
+                padding: 88px 24px;
+            }
+
+            .slider-container {
+                padding: 24px;
+            }
+
+            .slider-titlebar {
+                margin: -24px -24px 24px;
+            }
+        }
+
+        @media(max-width:600px) {
+            :root {
+                --nav-h: 56px;
+            }
+
+            nav {
+                padding: 0 14px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                margin-right: 12px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+                letter-spacing: 0.04em;
+            }
+
+            .nav-links a::before {
+                left: -8px;
+            }
+
+            .nav-links a::after {
+                right: -8px;
+            }
+
+            .nav-icons {
+                gap: 8px;
+            }
+
+            .nav-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .nav-icon svg {
+                width: 15px;
+                height: 15px;
+            }
+
+            #hero {
+                min-height: 100svh;
+                padding: calc(var(--nav-h) + 32px) 16px 56px;
+            }
+
+            .retro-content {
+                padding: 24px 16px;
+            }
+
+            .hero-headline {
+                font-size: 26px;
+            }
+
+            .hero-sub {
+                font-size: 14px;
+                line-height: 1.7;
+                margin-bottom: 28px;
+            }
+
+            section {
+                padding: 64px 16px;
+            }
+
+            .section-header {
+                gap: 10px;
+                margin-bottom: 28px;
+            }
+
+            .section-title {
+                font-size: 26px;
+                letter-spacing: 1px;
+            }
+
+            .section-title::before {
+                margin-right: 6px;
+            }
+
+            .about-grid {
+                gap: 32px;
+            }
+
+            .about-bio {
+                font-size: 14px;
+            }
+
+            .about-image {
+                max-width: 100%;
+            }
+
+            .about-stats {
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 16px 10px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 10px;
+            }
+
+            .slider-container {
+                padding: 16px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+            }
+
+            .slider-titlebar {
+                margin: -16px -16px 20px;
+                padding: 6px 10px;
+                font-size: 15px;
+            }
+
+            .slide {
+                padding: 0;
+            }
+
+            .slide-content h3 {
+                font-size: 20px;
+            }
+
+            .slide-desc {
+                font-size: 13px;
+            }
+
+            .slider-nav {
+                margin-top: 18px;
+                gap: 8px;
+            }
+
+            .nav-btn {
+                width: 34px;
+                height: 34px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 16px;
+            }
+
+            .hero-cta {
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .ticker-wrap {
+                margin-top: 40px;
+            }
+
+            .ticker-item {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            footer {
+                padding: 40px 16px;
+            }
+
+            .footer-text {
+                font-size: 15px;
+            }
+        }
+
+        @media(max-width:380px) {
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .nav-icon {
+                width: 27px;
+                height: 27px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -712,13 +920,14 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Connect</a></li>
+            <li><a href="resume.html" target="_blank" rel="noopener noreferrer">CV</a></li>
         </ul>
         <div class="nav-icons">
-            <a href="https://github.com/ateebshah" class="nav-icon" target="_blank"><svg viewBox="0 0 24 24">
+            <a href="https://github.com/oye-astarv" class="nav-icon" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24">
                     <path
                         d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                 </svg></a>
-            <a href="https://linkedin.com/in/ateebshah" class="nav-icon" target="_blank"><svg viewBox="0 0 24 24">
+            <a href="https://www.linkedin.com/in/iamamohammadateebshah" class="nav-icon" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24">
                     <path
                         d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg></a>
@@ -795,7 +1004,7 @@
             </div>
 
             <div class="slider-container reveal animate-float-slow">
-                <div class="retro-titlebar" style="margin: -40px -40px 40px; border-bottom: 2px solid var(--border);">
+                <div class="retro-titlebar slider-titlebar">
                     <span>DATABANK_VIEWER.EXE</span><span>[O][X]</span>
                 </div>
                 <div class="slider-track" id="projTrack">
@@ -813,8 +1022,6 @@
                                 LoRA/QLoRA and developed a RAG pipeline for retrieving technical documentation and
                                 generating
                                 context-aware solutions.</p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
-                                ]</a>
                         </div>
                     </div>
                     <!-- Slide 2 -->
@@ -830,27 +1037,11 @@
                                 maintenance. Designed robust data pipelines and visualisations for vehicle performance
                                 and sensor
                                 behaviour.</p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
+                            <a href="https://github.com/oye-astarv/Vehicle-Intelligence-System" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
                                 ]</a>
                         </div>
                     </div>
                     <!-- Slide 3 -->
-                    <div class="slide">
-                        <div class="slide-content">
-                            <h3>Pixus &mdash; Autonomous Modular Robot</h3>
-                            <div class="slide-tags"><span class="tag">ROS 2</span><span class="tag">Computer
-                                    Vision</span><span class="tag">C++</span><span class="tag">Python</span></div>
-                            <p class="slide-desc">Developed a ROS 2-based autonomous robot integrating computer vision,
-                                sensors and
-                                intelligent decision-making. Implemented navigation, person following, obstacle
-                                avoidance and
-                                voice-controlled behaviours, interfacing embedded hardware with higher-level control
-                                algorithms.</p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
-                                ]</a>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
                     <div class="slide">
                         <div class="slide-content">
                             <h3>A.L.E.X. &mdash; Intelligent Robotic Arm</h3>
@@ -863,8 +1054,6 @@
                                 kinematics and motor trajectories, exploring object detection, depth perception and
                                 closed-loop control.
                             </p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
-                                ]</a>
                         </div>
                     </div>
                     <!-- Slide 5 -->
@@ -880,8 +1069,6 @@
                                 system, applying FFT, filtering, damping analysis and feature extraction to develop an
                                 ML classification
                                 pipeline.</p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
-                                ]</a>
                         </div>
                     </div>
                     <!-- Slide 6 -->
@@ -895,7 +1082,7 @@
                                 data to classify different body movements, leveraging brain connectivity and spatial
                                 relationships
                                 between cortical regions.</p>
-                            <a href="#" class="btn btn-outline" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
+                            <a href="https://github.com/oye-astarv/neuro-vision" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="font-size:16px; padding:8px 16px;">[ VIEW_REPO
                                 ]</a>
                         </div>
                     </div>
@@ -907,7 +1094,6 @@
                         <div class="dot" data-idx="2"></div>
                         <div class="dot" data-idx="3"></div>
                         <div class="dot" data-idx="4"></div>
-                        <div class="dot" data-idx="5"></div>
                     </div>
                     <button class="nav-btn" id="projPrev">
                         < </button>
@@ -935,10 +1121,17 @@
                 robotics, and
                 hardware.</p>
             <div class="hero-cta" style="justify-content: center;">
-                <a href="mailto:ateeb.shah@example.com" class="btn btn-primary">EMAIL</a>
-                <a href="https://github.com/ateebshah" class="btn btn-primary">GITHUB</a>
-                <a href="https://linkedin.com/in/ateebshah" class="btn btn-primary">LINKEDIN</a>
+                <a href="mailto:theateebshah@gmail.com" class="btn btn-primary">EMAIL</a>
+                <a href="resume.html" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">RESUME</a>
+                <a href="https://github.com/oye-astarv" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">GITHUB</a>
+                <a href="https://www.linkedin.com/in/iamamohammadateebshah" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-primary">LINKEDIN</a>
             </div>
+            <p style="margin-top: 20px; font-size: 13px; color: var(--text-dim); line-height: 1.8;">
+                theateebshah@gmail.com &middot; u2578563@unimail.hud.ac.uk
+            </p>
         </div>
     </section>
 
